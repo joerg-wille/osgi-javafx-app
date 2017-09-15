@@ -3,6 +3,7 @@ OSGi JavaFX example copied from https://github.com/bildschirmarbeiter
 
 # build
 cd ./parent
+
 mvn package
 
 # License
