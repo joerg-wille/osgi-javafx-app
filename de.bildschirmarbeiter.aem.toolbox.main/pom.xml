@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>de.bildschirmarbeiter.aem</groupId>
+    <artifactId>aem-parent</artifactId>
+    <version>2-SNAPSHOT</version>
+    <relativePath>../aem-parent/pom.xml</relativePath>
+  </parent>
+
+  <groupId>de.bildschirmarbeiter.aem.toolbox</groupId>
+  <artifactId>de.bildschirmarbeiter.aem.toolbox.main</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>Bildschirmarbeiter AEM Toolbox Main</name>
+  <description>Bildschirmarbeiter Toolbox for AEM</description>
+
+  <!--url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main</url-->
+
+  <!--scm>
+    <connection>scm:git:git://github.com/bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main.git</connection>
+    <developerConnection>scm:git:git@github.com:bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main.git</developerConnection>
+    <url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main/tree/master</url>
+    <tag>HEAD</tag>
+  </scm-->
+
+  <properties>
+    <nativeReleaseVersion>0.0.1</nativeReleaseVersion>
+    <de.bildschirmarbeiter.application.osgi.version>0.0.1</de.bildschirmarbeiter.application.osgi.version>
+    <org.apache.felix.framework.version>5.6.8</org.apache.felix.framework.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireJavaVersion>
+                  <version>1.8.0-112</version>
+                </requireJavaVersion>
+                <requireMavenVersion>
+                  <version>3.5.0</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.zenjava</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>8.8.3</version>
+        <configuration>
+          <mainClass>de.bildschirmarbeiter.aem.toolbox.main.Toolbox</mainClass>
+          <appName>AEM Toolbox</appName>
+          <title>AEM Toolbox</title>
+          <identifier>de.bildschirmarbeiter.aem.toolbox</identifier>
+          <vendor>Bildschirmarbeiter</vendor>
+          <nativeReleaseVersion>${nativeReleaseVersion}</nativeReleaseVersion>
+          <fixedManifestClasspath>lib/org.apache.felix.framework-${org.apache.felix.framework.version}.jar,lib/de.bildschirmarbeiter.application.osgi-${de.bildschirmarbeiter.application.osgi.version}.jar</fixedManifestClasspath>
+        </configuration>
+        <executions>
+          <execution>
+            <id>build-jar</id>
+            <phase>package</phase>
+            <goals>
+              <goal>build-jar</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>build-native</id>
+            <phase>package</phase>
+            <goals>
+              <goal>build-native</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <!-- Bildschirmarbeiter -->
+    <dependency>
+      <groupId>de.bildschirmarbeiter.application</groupId>
+      <artifactId>de.bildschirmarbeiter.application.osgi</artifactId>
+      <version>${de.bildschirmarbeiter.application.osgi.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>de.bildschirmarbeiter.aem.toolbox</groupId>
+      <artifactId>de.bildschirmarbeiter.aem.toolbox.application</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+    <!-- Apache Felix -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.configadmin</artifactId>
+      <version>1.8.16</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.framework</artifactId>
+      <version>${org.apache.felix.framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.metatype</artifactId>
+      <version>1.1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.scr</artifactId>
+      <version>2.0.12</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>animal-sniffer-annotations</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- OPS4J Pax -->
+    <dependency>
+      <groupId>org.ops4j.pax.logging</groupId>
+      <artifactId>pax-logging-api</artifactId>
+      <version>1.10.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j.pax.logging</groupId>
+      <artifactId>pax-logging-service</artifactId>
+      <version>1.10.1</version>
+    </dependency>
+  </dependencies>
+
+</project>
