@@ -1,6 +1,11 @@
 # osgi-javafx-app
 OSGi JavaFX example copied from https://github.com/bildschirmarbeiter
 
+# build
+cd ./parent
+mvn package
+
+# License
 Copyright 2017 Oliver Lietz
 
 Licensed under the Apache License, Version 2.0 (the "License");
