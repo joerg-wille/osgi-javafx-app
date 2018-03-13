@@ -8,7 +8,7 @@
     <artifactId>aem-parent</artifactId>
     <version>2-SNAPSHOT</version>
     <relativePath>../aem-parent/pom.xml</relativePath>
-  </parent>
+   </parent>
 
   <groupId>de.bildschirmarbeiter.aem.toolbox</groupId>
   <artifactId>de.bildschirmarbeiter.aem.toolbox.main</artifactId>
@@ -17,18 +17,19 @@
   <name>Bildschirmarbeiter AEM Toolbox Main</name>
   <description>Bildschirmarbeiter Toolbox for AEM</description>
 
-  <!--url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main</url-->
+  <url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main</url>
 
-  <!--scm>
+  <scm>
     <connection>scm:git:git://github.com/bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main.git</connection>
     <developerConnection>scm:git:git@github.com:bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main.git</developerConnection>
     <url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.aem.toolbox.main/tree/master</url>
     <tag>HEAD</tag>
-  </scm-->
+  </scm>
 
   <properties>
     <nativeReleaseVersion>0.0.1</nativeReleaseVersion>
-    <de.bildschirmarbeiter.application.osgi.version>0.0.1</de.bildschirmarbeiter.application.osgi.version>
+    <de.bildschirmarbeiter.application.osgi.version>0.0.3-SNAPSHOT</de.bildschirmarbeiter.application.osgi.version>
+    <de.bildschirmarbeiter.aem.toolbox.application.version>0.0.3-SNAPSHOT</de.bildschirmarbeiter.aem.toolbox.application.version>
     <org.apache.felix.framework.version>5.6.8</org.apache.felix.framework.version>
   </properties>
 
@@ -98,7 +99,7 @@
     <dependency>
       <groupId>de.bildschirmarbeiter.aem.toolbox</groupId>
       <artifactId>de.bildschirmarbeiter.aem.toolbox.application</artifactId>
-      <version>0.0.1</version>
+      <version>${de.bildschirmarbeiter.aem.toolbox.application.version}</version>
     </dependency>
     <!-- Apache Felix -->
     <dependency>

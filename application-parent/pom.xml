@@ -18,19 +18,19 @@
   <name>Bildschirmarbeiter Application Parent</name>
   <description>Parent project for Bildschirmarbeiter Application</description>
 
-  <!--url>https://github.com/bildschirmarbeiter/application-parent</url-->
+  <url>https://github.com/bildschirmarbeiter/application-parent</url>
 
-  <!--scm>
+  <modules>
+    <module>../de.bildschirmarbeiter.application.osgi</module>
+    <module>../de.bildschirmarbeiter.application.message</module>
+  </modules>
+
+  <scm>
     <connection>scm:git:git://github.com/bildschirmarbeiter/application-parent.git</connection>
     <developerConnection>scm:git:git@github.com:bildschirmarbeiter/application-parent.git</developerConnection>
     <url>https://github.com/bildschirmarbeiter/application-parent/tree/master</url>
     <tag>HEAD</tag>
-  </scm-->
-
-  <modules>
-    <module>../de.bildschirmarbeiter.application.osgi</module>
-    <module>../de.bildschirmarbeiter.aem.toolbox.main</module>
-  </modules>
+  </scm>
 
   <dependencyManagement>
     <dependencies>

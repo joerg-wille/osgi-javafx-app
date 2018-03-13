@@ -8,28 +8,38 @@
     <artifactId>application-parent</artifactId>
     <version>2-SNAPSHOT</version>
     <relativePath>../application-parent/pom.xml</relativePath>
-  </parent>
+   </parent>
 
-  <artifactId>de.bildschirmarbeiter.application.osgi</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <artifactId>de.bildschirmarbeiter.application.message</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
+  <packaging>bundle</packaging>
 
-  <name>Bildschirmarbeiter Application OSGi</name>
+  <name>Bildschirmarbeiter Application Message</name>
   <description>${project.name}</description>
 
-  <url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.application.osgi</url>
+  <url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.application.message</url>
 
   <scm>
-    <connection>scm:git:git://github.com/bildschirmarbeiter/de.bildschirmarbeiter.application.osgi.git</connection>
-    <developerConnection>scm:git:git@github.com:bildschirmarbeiter/de.bildschirmarbeiter.application.osgi.git</developerConnection>
-    <url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.application.osgi/tree/master</url>
+    <connection>scm:git:git://github.com/bildschirmarbeiter/de.bildschirmarbeiter.application.message.git</connection>
+    <developerConnection>scm:git:git@github.com:bildschirmarbeiter/de.bildschirmarbeiter.application.message.git</developerConnection>
+    <url>https://github.com/bildschirmarbeiter/de.bildschirmarbeiter.application.message/tree/master</url>
     <tag>HEAD</tag>
   </scm>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
   <dependencies>
     <!-- OSGi -->
     <dependency>
       <groupId>org.osgi</groupId>
-      <artifactId>osgi.core</artifactId>
+      <artifactId>org.osgi.annotation.versioning</artifactId>
       <scope>provided</scope>
     </dependency>
     <!-- jsr305 -->

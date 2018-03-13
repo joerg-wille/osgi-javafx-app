@@ -18,13 +18,18 @@
   <name>Bildschirmarbeiter AEM Parent</name>
   <description>Parent project for Bildschirmarbeiter AEM</description>
 
-  <!--url>https://github.com/bildschirmarbeiter/aem-parent</url-->
+  <url>https://github.com/bildschirmarbeiter/aem-parent</url>
 
-  <!--scm>
+  <modules>
+    <module>../de.bildschirmarbeiter.aem.toolbox.main</module>
+    <module>../de.bildschirmarbeiter.aem.toolbox.application</module>
+  </modules>
+
+  <scm>
     <connection>scm:git:git://github.com/bildschirmarbeiter/aem-parent.git</connection>
     <developerConnection>scm:git:git@github.com:bildschirmarbeiter/aem-parent.git</developerConnection>
     <url>https://github.com/bildschirmarbeiter/aem-parent/tree/master</url>
     <tag>HEAD</tag>
-  </scm-->
+  </scm>
 
 </project>

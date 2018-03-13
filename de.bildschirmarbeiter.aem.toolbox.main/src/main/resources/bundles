@@ -1,8 +1,8 @@
 lib/antlr4-runtime-4.5.1-1.jar
 lib/commons-codec-1.6.jar
 lib/commons-lang3-3.6.jar
-lib/de.bildschirmarbeiter.aem.toolbox.application-0.0.1.jar
-lib/de.bildschirmarbeiter.application.message-0.0.1.jar
+lib/de.bildschirmarbeiter.aem.toolbox.application-0.0.3-SNAPSHOT.jar
+lib/de.bildschirmarbeiter.application.message-0.0.2-SNAPSHOT.jar
 lib/fluent-hc-4.3.6.jar
 lib/gson-2.4.jar
 lib/guava-16.0.jar

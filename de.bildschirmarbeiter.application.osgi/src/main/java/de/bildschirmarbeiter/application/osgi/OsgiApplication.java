@@ -18,7 +18,7 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.launch.Framework;
 import org.osgi.framework.launch.FrameworkFactory;
 
-public class OsgiApplication extends Application {
+public abstract class OsgiApplication extends Application {
 
     protected FrameworkFactory frameworkFactory;
 
@@ -33,7 +33,7 @@ public class OsgiApplication extends Application {
         final BundleContext context = framework.getBundleContext();
         final List<Bundle> bundles = new ArrayList<>();
         for (final String path : bundles()) {
-            final String url = String.format("file:%s", path);
+            final String url = String.format("reference:file:%s", path);
             final Bundle bundle = context.installBundle(url);
             bundles.add(bundle);
         }
